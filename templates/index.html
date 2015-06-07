@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="table-container">
+  <div id="drop">
+    <select class="drop-down">
+      <option >Select Product</option>
+      {%for obj in products%}
+        <option value="{{obj.id}}">{{obj.handle}}</option>
+      {%endfor%}
+    </select>
+  </div>
+  <div id = "pagination">
+    <div id = "page-info" ></div>
+    <div id="prev-next">
+      <div id = "previous-div">
+        <input id="previous" type="submit" value="Previous" class = "btn2"/>
+      </div>
+      <div id="next-div">
+        <input id ="next" type="submit" value="Next" class = "btn2"/>
+      </div>   
+    </div>
+  </div>
+  <div id = "data-div">
+    <div class="table_data" style="display:none;"></div>
+  </div>
+</div>
+
+{% endblock %}
+
+{%block javascript%}
+<script>
+var result = '{{result|safe}}';
+</script>
+<script src="/static/js/jquery-1.10.2.js"></script>
+<script src="/static/js/manipulate_data.js"></script>
+{%endblock%} -->
+

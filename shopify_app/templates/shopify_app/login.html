@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+{% if messages %}
+      {% for message in messages %}
+      <div{% if message.tags %} class="{{ message.tags }}-message"{% endif %}>{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+<div id="main">
+<div id="form-div">
+<h1>Install</h1>
+
+<p>Install this app in a shop to get access to its private data.</p>
+<form action="{% url "shopify_app.views.authenticate" %}" method="post">{% csrf_token %}
+  <label for='shop'><strong>The URL of the Shop</strong>
+    <span class="hint">(or just the subdomain if it&rsquo;s at myshopify.com)</span>
+  </label>
+  <p>
+  	<div class="input-navy">
+    <input id="shop" name="shop" size="45" type="text" class = "input-block form-control"/>
+   </div>
+   <div >
+    <input name="commit" type="submit" value="Install" class = "btn"/>
+    </div>
+  </p>
+</form>
+</div>
+</div>
+{% endblock %}

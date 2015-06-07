@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Shopify Application{% endblock %}</title>
+  <link href="/static/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="header">
+    <h1><a href="{% url "home.views.index" %}">Shopify Application</a></h1>
+    <p id="login-link">
+      {% if current_shop %}
+          <span class="note">current shop</span> <a href="https://{{ current_shop.domain }}" class="shop_name">{{ current_shop.domain }}</a> <span class="note">|</span>
+          <a href="{% url "shopify_app.views.logout" %}">logout</a>
+      {% endif %}
+    </p>
+  </div>
+
+  <div id="main-container" class="clearfix">
+
+      {% block content %}{% endblock %}
+   
+  </div>
+
+{%block javascript%}
+{%endblock%}
+
+</body>
+</html>
