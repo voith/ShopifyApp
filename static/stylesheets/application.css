@@ -167,13 +167,6 @@ code { font-size: 140%; }
 #logout { float: right; margin: 10px; }
 #logout a { color: #330; }
 
-#style-table { margin: 20px 0; }
-#style-table td * { margin: 0; }
-#style-table td { padding: 10px; border-bottom: 1px dotted #e5e5e5; }
-#style-table td:first-child {
-  background:#Fefefe url('../images/box-bg2.gif') repeat-x scroll left bottom;
-}
-
 /* Flash Messages */
 
 .error-message, .info-message {
